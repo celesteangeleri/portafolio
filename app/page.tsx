@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, Variants } from "framer-motion";
-import { Mail, ExternalLink, Globe, GraduationCap, Briefcase, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Mail, Globe, ChevronDown, X } from "lucide-react";
 
 // --- Componente de Mariposas Lineales ---
 // Modificado para mix-blend-multiply en fondos claros
@@ -72,11 +72,11 @@ const dict = {
     projects: { 
       title: "Selected Works", 
       items: [
-        { title: "Commercial Management Backoffice", desc: "Internal administrative system for managing clients, employees, sales, and stock in a retail distribution company. Built to optimize daily operations with centralized metrics.", tech: ["Angular", "MongoDB", "Sentry"] },
-        { title: "Corporate Benefits Platform", desc: "Web application where employees access a catalog of benefits, discounts, and redeemable prizes using a points system. Mapped dynamically to improve engagement.", tech: ["Angular", "Strapi", "REST APIs"] },
-        { title: "Nautical Experiences Marketplace", desc: "Ecommerce for booking boat and sailboat trips. Includes distinct profiles for captains and tourists, real-time booking, chatting, QR generation, and B2B capabilities.", tech: ["Angular", "Node.js", "React", "Next.js", "MongoDB", "Firebase", "PayPal", "Mercado Pago", "Sentry"] },
-        { title: "Bank Insurance Admin Platform", desc: "Web system for managing insurance associated with financial products. Integrates securely with bank infrastructure to centralize the insurance operations.", tech: ["Angular", "Node.js", "Docker", "Sentry", "REST APIs"] },
-        { title: "Homebanking Migration", desc: "Migration of a major homebanking frontend from legacy technologies to Angular. Focused on extreme modernization, modular refactoring, and responsiveness.", tech: ["Angular", "TypeScript", "RxJS", "Modular Arch"] },
+        { title: "Commercial Management Backoffice", desc: "Internal administrative system for managing clients, employees, sales, and stock in a retail distribution company. Built to optimize daily operations with centralized metrics.", tech: ["Angular", "MongoDB", "Sentry"], image: "/assets/jacaranda.png" },
+        { title: "Corporate Benefits Platform", desc: "Web application where employees access a catalog of benefits, discounts, and redeemable prizes using a points system. Mapped dynamically to improve engagement.", tech: ["Angular", "Strapi", "REST APIs"], image: "/assets/gomango.png" },
+        { title: "Nautical Experiences Marketplace", desc: "Ecommerce for booking boat and sailboat trips. Includes distinct profiles for captains and tourists, real-time booking, chatting, QR generation, and B2B capabilities.", tech: ["Angular", "Node.js", "React", "Next.js", "MongoDB", "Firebase", "PayPal", "Mercado Pago", "Sentry"], image: "/assets/bluhar-home.png" },
+        { title: "Bank Insurance Admin Platform", desc: "Web system for managing insurance associated with financial products. Integrates securely with bank infrastructure to centralize the insurance operations.", tech: ["Angular", "Node.js", "Docker", "Sentry", "REST APIs"], image: "/assets/aseguradora.png" },
+        { title: "Homebanking Migration", desc: "Migration of a major homebanking frontend from legacy technologies to Angular. Focused on extreme modernization, modular refactoring, and responsiveness.", tech: ["Angular", "TypeScript", "RxJS", "Modular Arch"], image: "/assets/homebancking.png" },
         { title: "Corporate Landing Pages", desc: "Design and creation of institutional sites built for optimal conversion, high performance generation of leads, and flawless SEO indexing.", tech: ["React", "Next.js", "SSR", "SEO optimization"] }
       ]
     },
@@ -101,11 +101,11 @@ const dict = {
     projects: { 
       title: "Obras Destacadas", 
       items: [
-        { title: "Backoffice de Gestión Comercial", desc: "Sistema administrativo interno para la gestión integral de clientes, ventas y stock en distribuidora de retail. Motor flexible para listas de precios estáticas y dinámicas.", tech: ["Angular", "MongoDB", "Sentry"] },
-        { title: "Plataforma de Beneficios Corporativos", desc: "Aplicación web donde empleados acceden a un catálogo de beneficios, descuentos y premios canjeables mediante un sistema de puntos. Customización por empresa.", tech: ["Angular", "Strapi", "REST APIs"] },
-        { title: "Marketplace Náutico Multiprol", desc: "Ecommerce para reserva de travesías. Roles de capitán y turista. Autenticación, reservas, pagos integrados en múltiples pasarelas y módulo B2B para hoteles con generación de QR.", tech: ["Angular", "Node.js", "React", "Next.js", "MongoDB", "Firebase", "PayPal", "Mercado Pago", "Sentry"] },
-        { title: "Administración de Seguros Bancarios", desc: "Sistema web para la gestión de pólizas integradas a productos financieros y flujos de contratación. Centralización en el ecosistema digital dentro del banco.", tech: ["Angular", "Node.js", "Docker", "Sentry", "REST APIs"] },
-        { title: "Migración de Homebanking", desc: "Participación en la migración estructural del frontend de una plataforma de homebanking desde tecnología legacy hacia Angular. Refactorización a arquitectura modular.", tech: ["Angular", "TypeScript", "RxJS", "Arquitectura modular"] },
+        { title: "Backoffice de Gestión Comercial", desc: "Sistema administrativo interno para la gestión integral de clientes, ventas y stock en distribuidora de retail. Motor flexible para listas de precios estáticas y dinámicas.", tech: ["Angular", "MongoDB", "Sentry"], image: "/assets/jacaranda.png" },
+        { title: "Plataforma de Beneficios Corporativos", desc: "Aplicación web donde empleados acceden a un catálogo de beneficios, descuentos y premios canjeables mediante un sistema de puntos. Customización por empresa.", tech: ["Angular", "Strapi", "REST APIs"], image: "/assets/gomango.png" },
+        { title: "Marketplace Náutico Multiprol", desc: "Ecommerce para reserva de travesías. Roles de capitán y turista. Autenticación, reservas, pagos integrados en múltiples pasarelas y módulo B2B para hoteles con generación de QR.", tech: ["Angular", "Node.js", "React", "Next.js", "MongoDB", "Firebase", "PayPal", "Mercado Pago", "Sentry"], image: "/assets/bluhar-home.png" },
+        { title: "Administración de Seguros Bancarios", desc: "Sistema web para la gestión de pólizas integradas a productos financieros y flujos de contratación. Centralización en el ecosistema digital dentro del banco.", tech: ["Angular", "Node.js", "Docker", "Sentry", "REST APIs"], image: "/assets/aseguradora.png" },
+        { title: "Migración de Homebanking", desc: "Participación en la migración estructural del frontend de una plataforma de homebanking desde tecnología legacy hacia Angular. Refactorización a arquitectura modular.", tech: ["Angular", "TypeScript", "RxJS", "Arquitectura modular"], image: "/assets/homebancking.png" },
         { title: "Landing Pages Corporativas", desc: "Desarrollo de múltiples sitios institucionales orientados a conversión y captación de leads. Implementación orientada a SEO y rendering optimizado (SSR).", tech: ["React", "Next.js", "SSR", "SEO optimization"] }
       ]
     },
@@ -113,67 +113,37 @@ const dict = {
   }
 };
 
-// --- Componente Custom Cursor (Adaptado a Modo Claro) ---
-function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY });
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      setIsHovering(!!(target.tagName === 'A' || target.tagName === 'BUTTON' || target.closest('a') || target.closest('button')));
-    };
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mouseover", handleMouseOver);
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-      window.removeEventListener("mouseover", handleMouseOver);
-    };
-  }, []);
-
-  return (
-    <>
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-coralUI rounded-full pointer-events-none z-[9999] hidden md:block mix-blend-multiply"
-        animate={{ 
-          x: mousePosition.x - 16, 
-          y: mousePosition.y - 16, 
-          scale: isHovering ? 2 : 1, 
-          backgroundColor: isHovering ? "rgba(255, 166, 158, 0.15)" : "rgba(255, 166, 158, 0)" 
-        }}
-        transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      />
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-slateUI rounded-full pointer-events-none z-[9999] hidden md:block mix-blend-multiply"
-        animate={{ 
-          x: mousePosition.x - 4, 
-          y: mousePosition.y - 4, 
-          opacity: isHovering ? 0 : 1 
-        }}
-        transition={{ duration: 0 }}
-      />
-    </>
-  );
-}
-
 export default function Portfolio() {
   const [lang, setLang] = useState<'en' | 'es'>('es');
+  const [expandedProjectIndex, setExpandedProjectIndex] = useState<number | null>(null);
   const t = dict[lang];
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
   
   const yBg1 = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const yBg2 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const opacityFade = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  return (
-    <main className="relative bg-baseBg text-slateUI selection:bg-coralUI/30 selection:text-slateUI cursor-auto overflow-hidden">
-      <CustomCursor />
-      <Butterflies />
+  const expandedProject =
+    expandedProjectIndex !== null ? t.projects.items[expandedProjectIndex] : null;
 
-      <motion.div style={{ scaleX }} className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-mintUI via-skyUI to-coralUI origin-left z-[100]" />
+  useEffect(() => {
+    if (expandedProjectIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setExpandedProjectIndex(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [expandedProjectIndex]);
+
+  return (
+    <main className="relative bg-baseBg text-slateUI selection:bg-coralUI/30 selection:text-slateUI cursor-auto overflow-x-hidden">
+      <Butterflies />
 
       {/* Fondos Abstractos Intensificados para Light Mode */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -275,15 +245,100 @@ export default function Portfolio() {
       <section id="projects" className="relative py-32 px-6 z-10">
         <div className="max-w-7xl mx-auto">
           <h3 className="font-display text-5xl md:text-7xl font-bold mb-20 text-center md:text-right text-slateUI">{t.projects.title}</h3>
+
+          {expandedProject?.image && (
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-lightbox-title"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-8"
+            >
+              <button
+                type="button"
+                className="absolute inset-0 bg-slateUI/55 backdrop-blur-md cursor-default"
+                aria-label={lang === "es" ? "Cerrar vista ampliada" : "Close expanded view"}
+                onClick={() => setExpandedProjectIndex(null)}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                className="relative z-10 w-full max-w-5xl max-h-[min(92vh,900px)] flex flex-col rounded-[2rem] bg-baseBg shadow-2xl ring-1 ring-slateUI/20 overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative shrink-0 bg-white flex items-center justify-center max-h-[min(72vh,680px)] min-h-0 p-3 sm:p-5">
+                  <img
+                    src={expandedProject.image}
+                    alt={expandedProject.title}
+                    className="max-h-[min(72vh,680px)] w-full object-contain object-center"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setExpandedProjectIndex(null)}
+                    className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slateUI shadow-md ring-1 ring-slateUI/15 hover:bg-coralUI/20 transition-colors"
+                    aria-label={lang === "es" ? "Cerrar" : "Close"}
+                  >
+                    <X size={20} strokeWidth={2} />
+                  </button>
+                </div>
+                <div className="flex flex-col gap-3 p-6 sm:p-8 pt-5 overflow-y-auto min-h-0 border-t border-slateUI/15 bg-baseBg">
+                  <h4
+                    id="project-lightbox-title"
+                    className="font-display text-2xl sm:text-3xl font-bold text-slateUI pr-12"
+                  >
+                    {expandedProject.title}
+                  </h4>
+                  <p className="font-sans text-slateUI/85 text-sm leading-relaxed font-light">
+                    {expandedProject.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {expandedProject.tech.map((tech, j) => (
+                      <span
+                        key={j}
+                        className="text-[10px] font-sans uppercase tracking-wider font-semibold text-coralUI px-2 py-1 bg-coralUI/10 border border-coralUI/30 rounded-md"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.projects.items.map((project, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {t.projects.items.map((project, i) => {
+              const hasImage = Boolean(project.image);
+              const isLightboxOpen = expandedProjectIndex === i && hasImage;
+              return (
               <motion.div 
-                 key={i} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
-                 whileHover={{ y: -10 }}
-                 className="glass-panel bg-white/40 rounded-3xl p-8 flex flex-col h-full group relative overflow-hidden hover:bg-white/70 transition-all shadow-sm"
+                 key={i} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15, type: "spring", stiffness: 320, damping: 26 }}
+                 animate={hasImage ? { scale: 1, y: 0, zIndex: 1 } : { y: 0 }}
+                 whileHover={
+                   hasImage
+                     ? { scale: 1.06, y: -10, zIndex: 20 }
+                     : { y: -10 }
+                 }
+                 onClick={() =>
+                   hasImage && setExpandedProjectIndex((prev) => (prev === i ? null : i))
+                 }
+                 className={`glass-panel bg-white/40 rounded-3xl p-8 flex flex-col h-full group relative overflow-hidden hover:bg-white/70 transition-colors shadow-sm ${
+                   hasImage ? "cursor-pointer" : ""
+                 } ${isLightboxOpen ? "ring-2 ring-coralUI/40 shadow-xl" : ""}`}
                >                 
-                 
+                 {project.image && (
+                   <div className="mb-6 h-44 rounded-2xl overflow-hidden border border-slateUI/10 bg-white/70 transition-all duration-300 group-hover:h-56">
+                     <img
+                       src={project.image}
+                       alt={project.title}
+                       className="h-full w-full object-cover object-center transition-all duration-300 group-hover:object-top"
+                       loading="lazy"
+                     />
+                   </div>
+                 )}
                  <h4 className="font-display text-xl md:text-2xl font-bold text-slateUI mb-4 relative z-10">{project.title}</h4>
                  <p className="font-sans text-slateUI/70 text-sm flex-grow mb-8 relative z-10 leading-relaxed font-light">{project.desc}</p>
                  
@@ -295,7 +350,8 @@ export default function Portfolio() {
                    ))}
                  </div>
                </motion.div>
-             ))}
+             );
+            })}
           </div>
         </div>
       </section>
@@ -327,9 +383,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
       
-      <footer className="relative z-10 py-8 text-center text-slateUI/50 font-sans text-xs tracking-widest uppercase border-t border-slateUI/10 bg-baseBg">
-        <p>Built with Next.js, Framer Motion & Glassmorphism Aesthetics.</p>
-      </footer>
+
     </main>
   );
 }
