@@ -54,22 +54,78 @@ function Butterflies() {
 // --- Diccionario de Traducciones ---
 const dict = {
   en: {
-    nav: { about: "About", skills: "Skills", exp: "Experience", work: "Work", contact: "Contact" },
-    hero: { greeting: "HELLO, I AM", role: "Frontend Developer", desc: "Crafting immersive, high-performance web experiences with modern architectures." },
-    about: { title: "The Journey", p1: "I am a Frontend Developer with a robust full-stack foundation. I thrive at the intersection of design and engineering, utilizing Scrum methodologies to deliver scalable software.", p2: "My architecture is built on clean code, SOLID principles, and unit testing. Bilingual (ES/EN B2), I am equipped to collaborate in dynamic, global teams." },
-    skills: { 
-      title: "Tech Stack", 
+    nav: { about: "About", skills: "Skills", experience: "Experience", education: "Education", ai: "AI Workflow", projects: "Work", contact: "Contact" },
+    hero: { greeting: "HELLO, I AM", role: "Fullstack Semi Senior Developer & Product Owner", desc: "Crafting immersive, high-performance web experiences while leading product strategy with Agile teams." },
+    about: { title: "The Journey", p1: "I am a Fullstack Semi Senior Developer with 4+ years building solutions for banking, e-commerce, and tourism, and a Product Owner leading 3 projects with direct stakeholder coordination.", p2: "My architecture is built on clean code, SOLID principles, design patterns, and unit testing. I leverage generative AI (Claude, ChatGPT) to speed up technical analysis and decision-making. Native Spanish speaker with English B2, ready to collaborate in dynamic, global teams." },
+    skills: {
+      title: "Tech Stack",
       categories: [
         { name: "Frontend", items: ["Angular", "React", "Next.js", "TypeScript", "RxJS", "HTML", "CSS / SCSS"] },
-        { name: "Backend", items: ["Node.js", "REST APIs", "Strapi"] },
+        { name: "Backend", items: ["Node.js", "REST APIs", "Strapi", ".NET (basic)"] },
         { name: "Databases", items: ["MongoDB", "Firebase"] },
-        { name: "DevOps & Infra", items: ["Docker"] },
+        { name: "DevOps & Infra", items: ["Docker", "Git"] },
         { name: "Integrations", items: ["Mercado Pago", "PayPal", "OTP Email Login", "QR systems"] },
-        { name: "Observability", items: ["Sentry"] }
+        { name: "Observability", items: ["Sentry"] },
+        { name: "AI & Assistants", items: ["Claude", "ChatGPT", "Gemini", "Cursor", "Antigravity"] },
+        { name: "Practices & Patterns", items: ["SOLID", "Unit Testing", "Factory Method", "Chain of Responsibility"] }
       ]
     },
-    experience: { title: "Evolution", present: "2022 - Present", role: "Full Stack Developer", company: "Banana Software", desc: "Engineered high-complexity Angular dashboards for e-commerce and homebanking. Built custom React/Next.js components and orchestrated .NET microservices." },
-    projects: { 
+    experience: {
+      title: "Evolution",
+      items: [
+        {
+          present: "2022 - Present",
+          role: "Frontend Semi Senior Developer",
+          company: "Banana Software",
+          desc: "Engineered critical Angular features for homebanking, insurance, and e-commerce platforms.",
+          bullets: [
+            "Built complex ABM modules for user, inventory, and insurable asset management",
+            "Integrated payment gateways (PayPal, Mercado Pago) and authentication systems",
+            "Migrated components to React and Next.js, improving institutional landing performance by 35%",
+            "Improved code maintainability through SOLID principles and unit testing"
+          ]
+        },
+        {
+          present: "2022 - Present",
+          role: "Product Owner (3 Projects)",
+          company: "Banana Software",
+          desc: "Led product strategy with direct coordination between stakeholders and the development team.",
+          bullets: [
+            "Direct client contact and needs validation, building backlogs aligned with business goals",
+            "Facilitated communication between clients, executives, and development teams",
+            "Ran agile delivery cycles (Dailies, Plannings, Retros, Refinements) using Jira and Trello",
+            "Prioritized by business impact and ROI, ensuring tangible value every sprint"
+          ]
+        }
+      ]
+    },
+    education: {
+      title: "Education & Certifications",
+      items: [
+        { name: "Frontend Web Development", school: "CoderHouse", date: "2020 - 2021" },
+        { name: "Angular Development", school: "CoderHouse", date: "2021 - 2022" },
+        { name: "Full Stack Developer", school: "Codo a Codo", date: "2022 - 2023" },
+        { name: "Advanced TypeScript", school: "Platzi", date: "2025" },
+        { name: "Advanced Angular", school: "Platzi", date: "2025" },
+        { name: "Intro to AI & Generative Agents", school: "Microsoft Learning", date: "2026" },
+        { name: "Claude 101", school: "Anthropic", date: "2026" }
+      ]
+    },
+    ai: {
+      title: "AI-Driven Workflow",
+      desc: "I use generative AI as a force multiplier across the product lifecycle, not just for code.",
+      tools: [
+        { name: "Claude", use: "Technical complexity analysis, requirement validation, acceptance criteria" },
+        { name: "ChatGPT / Gemini", use: "Technical documentation, best-practice research, stakeholder communication" },
+        { name: "Cursor", use: "Rapid feature prototyping and POC acceleration" }
+      ],
+      results: [
+        "30% faster architecture analysis for new features",
+        "Clearer technical documentation, agreed upon by team and clients",
+        "Optimized refinement cycles with AI-assisted requirement validation"
+      ]
+    },
+    projects: {
       title: "Selected Works", 
       items: [
         { title: "Commercial Management Backoffice", desc: "Internal administrative system for managing clients, employees, sales, and stock in a retail distribution company. Built to optimize daily operations with centralized metrics.", tech: ["Angular", "MongoDB", "Sentry"], image: "/assets/jacaranda.png" },
@@ -83,22 +139,78 @@ const dict = {
     contact: { title: "Let's Connect", desc: "Ready to build something extraordinary? My inbox is always open.", btn: "Send Message" }
   },
   es: {
-    nav: { about: "Sobre Mí", skills: "Skills", exp: "Experiencia", work: "Proyectos", contact: "Contacto" },
-    hero: { greeting: "HOLA, SOY", role: "Desarrolladora Frontend", desc: "Creando experiencias web inmersivas y de alto rendimiento con arquitecturas modernas." },
-    about: { title: "El Recorrido", p1: "Soy una Desarrolladora Frontend con una sólida base full-stack. Prospero en la intersección del diseño y la ingeniería, utilizando arquitecturas escalables.", p2: "Mi arquitectura se basa en código limpio, principios SOLID y testing. Bilingüe (ES/EN B2), estoy lista para colaborar en equipos dinámicos." },
-    skills: { 
-      title: "Stack Tecnológico", 
+    nav: { about: "Sobre Mí", skills: "Skills", experience: "Experiencia", education: "Educación", ai: "Metodología IA", projects: "Proyectos", contact: "Contacto" },
+    hero: { greeting: "HOLA, SOY", role: "Desarrolladora Fullstack Semi Senior & Product Owner", desc: "Creando experiencias web de alto rendimiento mientras lidero la estrategia de producto con equipos Ágiles." },
+    about: { title: "El Recorrido", p1: "Soy Desarrolladora Fullstack Semi Senior con más de 4 años de experiencia creando soluciones para banca, e-commerce y turismo, y Product Owner liderando 3 proyectos con coordinación directa de stakeholders.", p2: "Mi arquitectura se basa en código limpio, principios SOLID, patrones de diseño y testing. Aprovecho IA generativa (Claude, ChatGPT) para acelerar el análisis técnico y la toma de decisiones. Español nativo e inglés B2, lista para colaborar en equipos dinámicos y globales." },
+    skills: {
+      title: "Stack Tecnológico",
       categories: [
         { name: "Frontend", items: ["Angular", "React", "Next.js", "TypeScript", "RxJS", "HTML", "CSS / SCSS"] },
-        { name: "Backend", items: ["Node.js", "REST APIs", "Strapi"] },
+        { name: "Backend", items: ["Node.js", "REST APIs", "Strapi", ".NET (básico)"] },
         { name: "Bases de datos", items: ["MongoDB", "Firebase"] },
-        { name: "DevOps / Infra", items: ["Docker"] },
+        { name: "DevOps / Infra", items: ["Docker", "Git"] },
         { name: "Integraciones", items: ["Mercado Pago", "PayPal", "OTP Email Login", "QR systems"] },
-        { name: "Observabilidad", items: ["Sentry"] }
+        { name: "Observabilidad", items: ["Sentry"] },
+        { name: "IA & Asistentes", items: ["Claude", "ChatGPT", "Gemini", "Cursor", "Antigravity"] },
+        { name: "Prácticas & Patrones", items: ["SOLID", "Testing unitario", "Factory Method", "Chain of Responsibility"] }
       ]
     },
-    experience: { title: "Evolución", present: "2022 - Actualidad", role: "Full Stack Developer", company: "Banana Software", desc: "Desarrollo de dashboards complejos en Angular para e-commerce y homebanking. Creación de componentes React/Next.js e integración de microservicios .NET." },
-    projects: { 
+    experience: {
+      title: "Evolución",
+      items: [
+        {
+          present: "2022 - Actualidad",
+          role: "Desarrolladora Frontend Semi Senior",
+          company: "Banana Software",
+          desc: "Desarrollo de funcionalidades críticas en Angular para plataformas de homebanking, seguros y e-commerce.",
+          bullets: [
+            "Implementación de módulos ABM complejos para gestión de usuarios, inventario y activos asegurables",
+            "Integración de pasarelas de pago (PayPal, Mercado Pago) y sistemas de autenticación",
+            "Migración de componentes hacia React y Next.js, mejorando el rendimiento de landings institucionales en 35%",
+            "Optimización de la mantenibilidad del código mediante principios SOLID y testing unitario"
+          ]
+        },
+        {
+          present: "2022 - Actualidad",
+          role: "Product Owner (3 Proyectos)",
+          company: "Banana Software",
+          desc: "Liderazgo de la estrategia de producto con coordinación directa entre stakeholders y equipo de desarrollo.",
+          bullets: [
+            "Contacto directo con clientes y validación de necesidades, creación de backlogs alineados a objetivos comerciales",
+            "Facilitación de la comunicación entre clientes, ejecutivos y equipos de desarrollo",
+            "Conducción de ciclos de entrega ágiles (Dailies, Plannings, Retros, Refinamientos) usando Jira y Trello",
+            "Priorización basada en impacto empresarial y ROI, asegurando valor tangible en cada sprint"
+          ]
+        }
+      ]
+    },
+    education: {
+      title: "Educación & Certificaciones",
+      items: [
+        { name: "Desarrollo Web Frontend", school: "CoderHouse", date: "2020 - 2021" },
+        { name: "Desarrollo Angular", school: "CoderHouse", date: "2021 - 2022" },
+        { name: "Full Stack Developer", school: "Codo a Codo", date: "2022 - 2023" },
+        { name: "TypeScript Avanzado", school: "Platzi", date: "2025" },
+        { name: "Angular Avanzado", school: "Platzi", date: "2025" },
+        { name: "Introducción a IA y Agentes Generativos", school: "Microsoft Learning", date: "2026" },
+        { name: "Claude 101", school: "Anthropic", date: "2026" }
+      ]
+    },
+    ai: {
+      title: "Metodología con IA",
+      desc: "Uso la IA generativa como un multiplicador de fuerza en todo el ciclo de vida del producto, no solo para código.",
+      tools: [
+        { name: "Claude", use: "Análisis de complejidad técnica, validación de requisitos, criterios de aceptación" },
+        { name: "ChatGPT / Gemini", use: "Documentación técnica, research de mejores prácticas, comunicación con stakeholders" },
+        { name: "Cursor", use: "Prototipado rápido de features y aceleración de POCs" }
+      ],
+      results: [
+        "30% más rápido en el análisis de arquitectura de nuevas features",
+        "Documentación técnica más clara, consensuada entre equipo y clientes",
+        "Ciclos de refinamiento optimizados con validación de requisitos asistida por IA"
+      ]
+    },
+    projects: {
       title: "Obras Destacadas", 
       items: [
         { title: "Backoffice de Gestión Comercial", desc: "Sistema administrativo interno para la gestión integral de clientes, ventas y stock en distribuidora de retail. Motor flexible para listas de precios estáticas y dinámicas.", tech: ["Angular", "MongoDB", "Sentry"], image: "/assets/jacaranda.png" },
@@ -156,7 +268,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <a href="#" className="font-display text-2xl font-bold text-coralUI tracking-tighter hover:text-slateUI transition-colors">CA.</a>
           <div className="hidden md:flex gap-8 text-sm font-sans text-slateUI/80 font-medium items-center">
-            {['about', 'skills', 'experience', 'projects'].map((item) => (
+            {['about', 'skills', 'experience', 'education', 'ai', 'projects'].map((item) => (
               <a key={item} href={`#${item}`} className="hover:text-coralUI transition-colors uppercase tracking-widest text-xs">{t.nav[item as keyof typeof t.nav]}</a>
             ))}
           </div>
@@ -229,16 +341,87 @@ export default function Portfolio() {
           <div className="relative pl-8 md:pl-0">
             <div className="absolute left-[7px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-coralUI via-skyUI to-transparent opacity-40" />
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative md:w-1/2 md:pr-12 md:text-right mb-16 group">
-              <div className="absolute left-[-12px] md:left-auto md:right-[-4px] top-6 w-3 h-3 rounded-full bg-coralUI shadow-[0_0_15px_#ffa69e] border-2 border-white" />
-              <div className="glass-panel bg-white/60 p-8 rounded-3xl group-hover:bg-white transition-all shadow-sm">
-                <span className="font-sans text-xs tracking-widest text-slateUI/60 font-bold uppercase">{t.experience.present}</span>
-                <h4 className="font-display text-2xl font-bold text-slateUI mt-2 mb-1">{t.experience.role}</h4>
-                <p className="font-sans text-coralUI mb-4 font-semibold">{t.experience.company}</p>
-                <p className="font-sans text-slateUI/80 text-sm leading-relaxed">{t.experience.desc}</p>
-              </div>
-            </motion.div>
+            {t.experience.items.map((exp, i) => {
+              const onRight = i % 2 === 1;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                  className={`relative md:w-1/2 mb-16 group ${onRight ? "md:ml-auto md:pl-12 md:text-left" : "md:pr-12 md:text-right"}`}
+                >
+                  <div className={`absolute left-[-12px] top-6 w-3 h-3 rounded-full bg-coralUI shadow-[0_0_15px_#ffa69e] border-2 border-white ${onRight ? "md:left-[-4px]" : "md:left-auto md:right-[-4px]"}`} />
+                  <div className="glass-panel bg-white/60 p-8 rounded-3xl group-hover:bg-white transition-all shadow-sm">
+                    <span className="font-sans text-xs tracking-widest text-slateUI/60 font-bold uppercase">{exp.present}</span>
+                    <h4 className="font-display text-2xl font-bold text-slateUI mt-2 mb-1">{exp.role}</h4>
+                    <p className="font-sans text-coralUI mb-4 font-semibold">{exp.company}</p>
+                    <p className="font-sans text-slateUI/80 text-sm leading-relaxed mb-4">{exp.desc}</p>
+                    <ul className="space-y-2 text-left">
+                      {exp.bullets.map((bullet, j) => (
+                        <li key={j} className="flex gap-2 text-sm text-slateUI/70 leading-relaxed">
+                          <span className="text-coralUI font-bold">·</span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      <section id="education" className="relative py-32 px-6 z-10">
+        <div className="max-w-5xl mx-auto">
+          <motion.h3 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="font-display text-5xl md:text-7xl font-bold mb-16 text-slateUI">
+            {t.education.title}
+          </motion.h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {t.education.items.map((edu, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
+                className="glass-panel bg-white/40 p-6 rounded-2xl flex items-center justify-between gap-4 hover:bg-white/70 transition-colors shadow-sm"
+              >
+                <div>
+                  <h4 className="font-display text-lg font-bold text-slateUI">{edu.name}</h4>
+                  <p className="font-sans text-coralUI text-sm font-semibold">{edu.school}</p>
+                </div>
+                <span className="font-sans text-xs tracking-widest text-slateUI/50 font-bold uppercase whitespace-nowrap">{edu.date}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="ai" className="relative py-32 px-6 z-10">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
+            className="glass-panel p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 w-64 h-64 bg-skyUI/40 rounded-full blur-[80px]" />
+            <h3 className="font-display text-4xl md:text-5xl font-bold mb-4 text-slateUI relative z-10">{t.ai.title}</h3>
+            <p className="font-sans text-slateUI/80 text-lg leading-relaxed font-light mb-12 max-w-3xl relative z-10">{t.ai.desc}</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 relative z-10">
+              {t.ai.tools.map((tool, i) => (
+                <div key={i} className="bg-white/50 p-6 rounded-2xl">
+                  <h4 className="font-display text-lg font-bold text-coralUI mb-2">{tool.name}</h4>
+                  <p className="font-sans text-sm text-slateUI/70 leading-relaxed">{tool.use}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-3 relative z-10">
+              {t.ai.results.map((result, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="w-2 h-2 rounded-full bg-mintUI shrink-0" />
+                  <p className="font-sans text-slateUI/80 text-sm font-medium">{result}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
